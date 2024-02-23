@@ -1,4 +1,4 @@
-package pro.sky.java.examinerservice.services;
+package pro.sky.java.examinerservice.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
