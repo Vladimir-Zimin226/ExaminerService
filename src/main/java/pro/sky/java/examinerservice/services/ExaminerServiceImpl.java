@@ -34,7 +34,7 @@ public class ExaminerServiceImpl implements ExaminerService {
         if (amount <= 0 || size < amount) {
             throw new InvalidQuestionRequestException(amount, size);
         }
-        Set<Question> questions = new HashSet<>();
+        Set<Question> questions = new LinkedHashSet<>();
         while (questions.size() < amount) {
             questions.add(serviceList.get(random.nextInt(serviceList.size())).getRandomQuestion());
         }
