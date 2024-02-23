@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 @Repository("javaRepository")
-public class JavaQuestionRepository {
+public class JavaQuestionRepository implements QuestionRepository {
     private final Set<Question> questions;
 
     public JavaQuestionRepository() {

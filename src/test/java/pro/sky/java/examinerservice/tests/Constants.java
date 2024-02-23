@@ -1,4 +1,4 @@
-package pro.sky.java.examinerservice;
+package pro.sky.java.examinerservice.tests;
 
 import pro.sky.java.examinerservice.repository.Question;
 
@@ -12,6 +12,9 @@ public class Constants {
     public static final String ANSWER1 = "int, String, float, double etc.";
     public static final String ANSWER2 = "Ограничение функционала программы для пользователя в зависимости от его потребностей";
     public static final String ANSWER3 = "Конструкция, хранящая в себе несколько элементов";
+    public static final String QUESTION4 = "Из-за чего чаще всего случаются ошибки в коде?";
+    public static final String ANSWER4 = "Из-за невнимательности";
+
 
     public static final Question FULL_QUESTION1 = new Question(QUESTION1, ANSWER1);
     public static final Question FULL_QUESTION2 = new Question(QUESTION2, ANSWER2);

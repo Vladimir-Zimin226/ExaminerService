@@ -1,22 +1,20 @@
-package pro.sky.java.examinerservice;
+package pro.sky.java.examinerservice.tests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.stubbing.Answer1;
 import pro.sky.java.examinerservice.repository.JavaQuestionRepository;
 import pro.sky.java.examinerservice.repository.Question;
 import pro.sky.java.examinerservice.services.JavaQuestionServiceImpl;
 
-import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static pro.sky.java.examinerservice.Constants.*;
+import static pro.sky.java.examinerservice.tests.Constants.*;
 
 @ExtendWith(MockitoExtension.class)
 public class JavaQuestionServiceTest {
