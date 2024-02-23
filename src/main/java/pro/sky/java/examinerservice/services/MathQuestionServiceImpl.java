@@ -1,7 +1,9 @@
 package pro.sky.java.examinerservice.services;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import pro.sky.java.examinerservice.repository.Question;
 import pro.sky.java.examinerservice.repository.QuestionRepository;
 
@@ -23,24 +25,23 @@ public class MathQuestionServiceImpl implements QuestionService {
 
     @Override
     public boolean add(String question, String answer) {
-        return add(new Question(question, answer));
+        throw new ResponseStatusException(HttpStatus.METHOD_NOT_ALLOWED, "Adding questions is not allowed for math questions");
     }
 
     @Override
     public boolean add(Question question) {
-        return questionRepository.add(question);
+        throw new ResponseStatusException(HttpStatus.METHOD_NOT_ALLOWED, "Adding questions is not allowed for math questions");
     }
 
     @Override
     public boolean remove(String question, String answer) {
-        return questionRepository.remove(new Question(question, answer));
+        throw new ResponseStatusException(HttpStatus.METHOD_NOT_ALLOWED, "Removing questions is not allowed for math questions");
     }
 
     @Override
     public Collection<Question> getAll() {
-        return Set.copyOf(questionRepository.getAll());
+        throw new ResponseStatusException(HttpStatus.METHOD_NOT_ALLOWED, "Getting all questions is not allowed for math questions");
     }
-
     @Override
     public Question getRandomQuestion() {
         List<Question> questionList = List.copyOf(questionRepository.getAll());
