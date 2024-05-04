@@ -5,21 +5,20 @@ import org.springframework.stereotype.Service;
 import pro.sky.java.examinerservice.repository.Question;
 import pro.sky.java.examinerservice.repository.QuestionRepository;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
-@Service("javaService")
-public class JavaQuestionServiceImpl implements QuestionService {
+@Service("mathService")
+public class MathQuestionServiceImpl implements QuestionService {
+
+    private final Random random = new Random();
 
     private final QuestionRepository questionRepository;
 
-    public JavaQuestionServiceImpl(@Qualifier("javaRepository") QuestionRepository questionRepository) {
+    public MathQuestionServiceImpl(@Qualifier("mathRepository") QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;
-    }
-
-    private Random random = new Random();
-
-    public void setRandom(Random random) {
-        this.random = random;
     }
 
     @Override
@@ -39,12 +38,13 @@ public class JavaQuestionServiceImpl implements QuestionService {
 
     @Override
     public Collection<Question> getAll() {
-        return questionRepository.getAll();
+        return Set.copyOf(questionRepository.getAll());
     }
 
     @Override
     public Question getRandomQuestion() {
-        return List.copyOf(questionRepository.getAll()).get(random.nextInt(questionRepository.getAll().size()));
+        List<Question> questionList = List.copyOf(questionRepository.getAll());
+        return questionList.get(random.nextInt(questionList.size()));
     }
 
     @Override
